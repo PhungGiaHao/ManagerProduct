@@ -80,11 +80,24 @@ Simulated shipping costs calculation is provided within the API.(use shippo sdk 
    - Leverage SQS or EventBridge for asynchronous processing of events (e.g.,low-stock notifications). : 
      - I set send_message low stock in file s3_sqs.py , and use cronjob , set 1s to send with item investory < 50
   - Integrate with a third-party shipping service (e.g., Shippo) to calculate shipping costs: 
-     - shippingcost.py Here I simulate an order and get the default shipping cost each time I create an order
+     - shippingcost.py Here I simulate an order and get the default shipping cost each time I create an order 
+  - file readDynamodb.py to read table dynamo
+  - I have added 10 products and 4 default categories
 
 
+## In the field I have little experience 
+  - Identify the gaps in your knowledge by reviewing documentation and examples.: 
+    - Review Documentation: Start by reading the official documentation related to the technology or concept. For FastAPI and       AWS, this would mean looking at the FastAPI documentation and AWS documentation.
 
-
+  - Practice hands-on with small projects or experiments.
+    - Build Small Projects: Create small, manageable projects or components related to the technology. 
+    - Tutorials and Courses: Websites like Udemy, Coursera, or Codecademy offer courses on AWS, FastAPI, and related    
+       technologies.
+    
+  - Seek help from communities or mentors when needed
+    - Join Forums and Communities: Participate in relevant forums or communities. Stack Overflow, Reddit, and specific 
+      technology forums can be helpful.
+    - Seek Mentorship: Reach out to colleagues or mentors who have experience with the technology for guidance.
 
 
 
