@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:14.3
+    container_name: products_postgres
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
+    env_file:
+      - .env
+    ports:
+      - '${DATABASE_PORT}:5432'
+    environment:
+      - 'POSTGRES_DB=${DATABASE_NAME}'
+      - 'POSTGRES_USER=${DATABASE_USER}'
+      - 'POSTGRES_PASSWORD=${DATABASE_PASSWORD}'
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack
+    env_file:
+      - .env
+    environment:
+      - AWS_DEFAULT_REGION=${AWS_REGION}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - SERVICES=s3,cognito,dynamodb,lambda,sqs
+      - EDGE_PORT=4566
+      - DEBUG=${DEBUG:-0}
+    ports:
+      - "4566:4566"  # Edge port for all services
+      - "8080:8080"
+
+    volumes:
+      - "${LOCALSTACK_DATA_DIR:-./localstack}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./init-s3.py:/etc/localstack/init/ready.d/init-s3.py"
+      - "./init-sqs.sh:/etc/localstack/init/ready.d/init-sqs.sh"
