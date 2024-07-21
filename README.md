@@ -85,7 +85,17 @@ Simulated shipping costs calculation is provided within the API.(use shippo sdk 
   - file readDynamodb.py to read table dynamo
   - I have added 10 products and 4 default categories
 
+## troubleshoot  
+ - Make sure your computer has aws cli
+ - Verify that LocalStack services are running correctly by checking the LocalStack:
+ ```bash 
+    https://localhost.localstack.cloud:4566/_localstack/health 
+ ```
 
+- Ensure that the .env file has the correct values and all necessary environment variables are set.
+
+
+ 
 ## Unfamiliar Areas 
   - Identify the gaps in your knowledge by reviewing documentation and examples.: 
     - Review Documentation: Start by reading the official documentation related to the technology or concept. For FastAPI and       AWS, this would mean looking at the FastAPI documentation and AWS documentation.
