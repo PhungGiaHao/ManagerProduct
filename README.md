@@ -84,7 +84,9 @@ Simulated shipping costs calculation is provided within the API.(use shippo sdk 
      - shippingcost.py Here I simulate an order and get the default shipping cost each time I create an order 
   - file readDynamodb.py to read table dynamo
   - I have added 10 products and 4 default categories
-
+  - You can watch the demo video here
+    [video_1](https://drive.google.com/file/d/1YBxbULGt19WxAuDfBLBoE4b5LFWYFdcn/view)
+    [video_2](https://drive.google.com/file/d/1TWC1SH3hxiI0SQUKGZnXaNW8oo8IuSbw/view?usp=sharing)
 ## troubleshoot  
  - Make sure your computer has aws cli
  - Verify that LocalStack services are running correctly by checking the LocalStack:
