@@ -74,6 +74,7 @@ Simulated shipping costs calculation is provided within the API.(use shippo sdk 
 
 
 ## Note 
+ - authentication with jwt token
  - AWS Integration:
    - Keep API call tracking in DynamoDB.
    - Use S3 for image storage.
