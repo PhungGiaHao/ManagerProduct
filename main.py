@@ -9,7 +9,7 @@ from app.Model import models
 from app.utils.dynamodb import create_table, log_api_call
 from app.utils.s3_sqs import send_message_low_stock
 from database import engine, get_db
-from app.Routers import auth, category, product,oders
+from app.Routers import auth, category, product,oders, sqs
 from contextlib import asynccontextmanager
 from apscheduler.schedulers.background import BackgroundScheduler
 from fastapi.security import HTTPBearer
@@ -54,7 +54,9 @@ get_db()
 app.include_router(auth.router, prefix="/auth", tags=["auth"],dependencies=[Depends(reusable_oauth2)])
 app.include_router(category.router, prefix="/categories", tags=["categories"],dependencies=[Depends(reusable_oauth2)])
 app.include_router(product.router, prefix="/products", tags=["products"],dependencies=[Depends(reusable_oauth2)])
-app.include_router(oders.router, prefix="/orders", tags=["orders"],dependencies=[Depends(reusable_oauth2)])   
+app.include_router(oders.router, prefix="/orders", tags=["orders"],dependencies=[Depends(reusable_oauth2)])  
+app.include_router(sqs.router, prefix="/sqs", tags=["sqs"],dependencies=[Depends(reusable_oauth2)])   
+
 @app.get('/')
 def root():
     return {"message": "Hello World"}
