@@ -65,7 +65,8 @@ pytest
 -DynamoDB: NoSQL database service.
 ### Initialization Scripts
 - The project includes initialization scripts for setting up LocalStack resources:
-- init-sqs.sh: Creates an SQS queue.
+- init-sqs.sh: Creates an SQS queue.(Make sure your computer has aws cli, otherwise it will not be able to create sqs)
+  - Install aws cli follow link : [aws_cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - init-s3.py: Creates an S3 bucket.
 
 ### Shipping Integration
