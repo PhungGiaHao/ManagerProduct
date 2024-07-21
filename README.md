@@ -85,7 +85,7 @@ Simulated shipping costs calculation is provided within the API.(use shippo sdk 
   - I have added 10 products and 4 default categories
 
 
-## In the field I have little experience 
+## Unfamiliar Areas 
   - Identify the gaps in your knowledge by reviewing documentation and examples.: 
     - Review Documentation: Start by reading the official documentation related to the technology or concept. For FastAPI and       AWS, this would mean looking at the FastAPI documentation and AWS documentation.
 
