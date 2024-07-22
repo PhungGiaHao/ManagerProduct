@@ -42,6 +42,7 @@ Ensure you have Docker and Docker Compose installed on your system. You can down
 ```bash 
 docker-compose up --build
 ```
+- Here I leave my fields in the env file without deleting them to easily set up the project.
 
 ### 3. **Start the FastAPI Application**
 
