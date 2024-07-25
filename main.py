@@ -51,7 +51,7 @@ async def track_api_calls(request: Request, call_next):
 models.Base.metadata.create_all(bind=engine)
 get_db()
 
-app.include_router(auth.router, prefix="/auth", tags=["auth"],dependencies=[Depends(reusable_oauth2)])
+app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(category.router, prefix="/categories", tags=["categories"],dependencies=[Depends(reusable_oauth2)])
 app.include_router(product.router, prefix="/products", tags=["products"],dependencies=[Depends(reusable_oauth2)])
 app.include_router(oders.router, prefix="/orders", tags=["orders"],dependencies=[Depends(reusable_oauth2)])  
